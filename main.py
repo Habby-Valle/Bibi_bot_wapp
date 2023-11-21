@@ -2,11 +2,8 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 import time
-from decouple import config
 from config import CHROME_PROFILE_PATH
 import textwrap
-
-MESSAGE = config('MESSAGE')
 
 class WhatsAppBot:
     def __init__(self):
@@ -30,11 +27,6 @@ class WhatsAppBot:
         message_input.send_keys(Keys.ENTER)
         time.sleep(10)
         
-
-        # # Envia a mensagem
-        # send_button = self.driver.find_element(By.XPATH, '//*[@id="main"]/footer/div[1]/div/span[2]/div/div[2]/span/div/span')
-        # send_button.click()
-
     def connect_whatsapp(self):
         contatos = ["Habby (você)", "Bianca"]
         message = '''
